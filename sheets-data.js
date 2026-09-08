@@ -147,7 +147,7 @@ const SHEETS = [
       "images/ironman/2.png",
       "images/ironman/3.png",
       "images/ironman/4.png",
-      "images/ironman/5.jpg",
+      "images/ironman/5.png",
       "images/ironman/6.png",
       "images/ironman/7.png",
       "images/ironman/8.png",
