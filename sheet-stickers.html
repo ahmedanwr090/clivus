@@ -30,6 +30,9 @@
         <input type="text" id="sheetSearch" placeholder="Search sheets..." onkeyup="filterSheets()" />
       </div>
 
+      <!-- Count Display -->
+      <p id="sheetCount" style="color:#ffffff; font-size: 1.1rem; font-weight: 600; margin-top: 0.5rem;"></p>
+
       <div class="product-grid product-grid--sheets" id="sheetGrid">
         <!-- cards are generated from sheets-data.js -->
       </div>
@@ -53,9 +56,25 @@
 
   <script src="sheets-data.js"></script>
   <script>
+    // Fisher-Yates Shuffle Function
+    function shuffleArray(array) {
+      for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
+      }
+      return array;
+    }
+
     function renderSheets(list) {
       const grid = document.getElementById("sheetGrid");
       grid.innerHTML = "";
+
+      // Update total count
+      const countElement = document.getElementById("sheetCount");
+      if (countElement) {
+        countElement.textContent = `Total Sheets: ${list.length}`;
+      }
+
       list.forEach((sheet) => {
         const card = document.createElement("a");
         card.href = `sheet-detail.html?id=${encodeURIComponent(sheet.id)}`;
@@ -73,11 +92,13 @@
 
     function filterSheets() {
       const query = document.getElementById("sheetSearch").value.trim().toLowerCase();
-      const filtered = SHEETS.filter((s) => s.name.toLowerCase().includes(query));
+      const filtered = currentSheets.filter((s) => s.name.toLowerCase().includes(query));
       renderSheets(filtered);
     }
 
-    renderSheets(SHEETS);
+    // Shuffle array copy on load and render once
+    const currentSheets = shuffleArray([...SHEETS]);
+    renderSheets(currentSheets);
   </script>
 </body>
 </html>

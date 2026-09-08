@@ -29,6 +29,41 @@
       <div class="search-bar">
         <input type="text" id="stickerSearch" placeholder="Search stickers..." onkeyup="filterStickers()" />
       </div>
+      <!-- Place this where you want the sticker count to display -->
+<p id="stickerCount" style="color:#ffffff; font-size: 1.1rem; font-weight: 600; margin-top: 0.5rem;"></p>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const grid = document.getElementById("productGrid");
+    const cards = Array.from(grid.children);
+
+    // 1. Display total sticker count
+    const countElement = document.getElementById("stickerCount");
+    if (countElement) {
+      countElement.textContent = `Total Stickers: ${cards.length}`;
+    }
+
+    // 2. Shuffle cards on page load (Fisher-Yates Shuffle)
+    for (let i = cards.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [cards[i], cards[j]] = [cards[j], cards[i]];
+    }
+
+    // Re-append shuffled cards to DOM
+    cards.forEach((card) => grid.appendChild(card));
+  });
+
+  // Search filter functionality
+  function filterStickers() {
+    const query = document.getElementById("stickerSearch").value.trim().toLowerCase();
+    const cards = document.querySelectorAll("#productGrid .product-card");
+    
+    cards.forEach((card) => {
+      const name = card.querySelector(".product-name").textContent.toLowerCase();
+      card.style.display = name.includes(query) ? "" : "none";
+    });
+  }
+</script>
 
       <div class="product-grid" id="productGrid">
 
@@ -40,10 +75,14 @@
 
       <article class="product-card">
   <img src="images/Among_us-removebg-preview.png" alt="Among Us Sticker" class="product-photo" />
-  <h3 class="product-name">amoung us in the vent</h3>
+  <h3 class="product-name">among us in the vent</h3>
   <p class="product-price">10 pounds</p>
 </article>
-
+   <article class="product-card">
+  <img src="images/Doodle.png" alt="Doodle Sticker" class="product-photo" />
+  <h3 class="product-name">Doodle</h3>
+  <p class="product-price">10 pounds</p>
+</article>
    <article class="product-card">
   <img src="images/Batman_Stickers-removebg-preview.png" alt="Batman Sticker" class="product-photo" />
   <h3 class="product-name">Batman logo</h3>
@@ -71,6 +110,11 @@
   <h3 class="product-name">Muscular Monalisa</h3>
   <p class="product-price">10 pounds</p>
 </article>
+   <article class="product-card">
+  <img src="images/cam.png" alt="Camera Sticker" class="product-photo" />
+  <h3 class="product-name">Camera</h3>
+  <p class="product-price">10 pounds</p>
+</article>
 <article class="product-card">
   <img src="images/3.jpg" alt="اللهم بارك لي في وقتي" class="product-photo" />
   <h3 class="product-name">اللهم بارك لي في وقتي</h3>
@@ -91,6 +135,11 @@
   <h3 class="product-name">وما توفيقي الا بالله</h3>
   <p class="product-price">10 pounds</p>
 </article>
+   <article class="product-card">
+  <img src="images/hair.png" alt="جابت اخرها" class="product-photo" />
+  <h3 class="product-name">جابت اخرها</h3>
+  <p class="product-price">10 pounds</p>
+</article>
 <article class="product-card">
   <img src="images/bullshiy.png" alt="Bullshit" class="product-photo" />
   <h3 class="product-name">Bullshit</h3>
@@ -107,6 +156,11 @@
   <h3 class="product-name">Thinking</h3>
   <p class="product-price">10 pounds</p>
 </article>
+   <article class="product-card">
+  <img src="images/tony.png" alt="Tony Stark" class="product-photo" />
+  <h3 class="product-name">Tony Stark</h3>
+  <p class="product-price">10 pounds</p>
+</article>
 <article class="product-card">
   <img src="images/5.jpg" alt="اياك نستعين" class="product-photo" />
   <h3 class="product-name">واياك نستعين</h3>
@@ -115,6 +169,11 @@
 <article class="product-card">
   <img src="images/2 hearts.png" alt="2 1/2 Hearts" class="product-photo" />
   <h3 class="product-name">2 1/2 Hearts</h3>
+  <p class="product-price">10 pounds</p>
+</article>
+   <article class="product-card">
+  <img src="images/shit.png" alt="toilet paper" class="product-photo" />
+  <h3 class="product-name">toilet paper</h3>
   <p class="product-price">10 pounds</p>
 </article>
 <article class="product-card">
@@ -132,6 +191,11 @@
   <h3 class="product-name">Mario</h3>
   <p class="product-price">10 pounds</p>
 </article>
+   <article class="product-card">
+  <img src="images/tulips.png" alt="Tulips" class="product-photo" />
+  <h3 class="product-name">Tulips</h3>
+  <p class="product-price">10 pounds</p>
+</article>
 <article class="product-card">
   <img src="images/Bmw.png" alt="BMW" class="product-photo" />
   <h3 class="product-name">BMW Logo</h3>
@@ -142,12 +206,31 @@
   <h3 class="product-name">Stunning Spiderman</h3>
   <p class="product-price">10 pounds</p>
 </article>
+   <article class="product-card">
+  <img src="images/no risk.png" alt="No Risk" class="product-photo" />
+  <h3 class="product-name">No Risk No fun</h3>
+  <p class="product-price">10 pounds</p>
+</article>
 <article class="product-card">
   <img src="images/شاي بالنعناع.png" alt="Shay al-Nayn" class="product-photo" />
   <h3 class="product-name">شاي بالنعناع</h3>
   <p class="product-price">10 pounds</p>
 </article>
-
+   <article class="product-card">
+  <img src="images/it is.png" alt="sticker" class="product-photo" />
+  <h3 class="product-name">it is what it is</h3>
+  <p class="product-price">10 pounds</p>
+</article>
+   <article class="product-card">
+  <img src="images/too.png" alt="too many" class="product-photo" />
+  <h3 class="product-name">too many tabs</h3>
+  <p class="product-price">10 pounds</p>
+</article>
+<article class="product-card">
+  <img src="images/I Love You 3000 Sticker.png" alt="I Love You 3000" class="product-photo" />
+  <h3 class="product-name">I Love You 3000</h3>
+  <p class="product-price">10 pounds</p>
+</article>
 <article class="product-card">
   <img src="images/فيروز.png" alt="Fayrouiz" class="product-photo" />
   <h3 class="product-name">فيروز</h3>
@@ -166,6 +249,11 @@
 </article>
 
 <article class="product-card">
+  <img src="images/r.png" alt="STARK INDUSTRIES" class="product-photo" />
+  <h3 class="product-name">STARK INDUSTRIES</h3>
+  <p class="product-price">10 pounds</p>
+</article>
+<article class="product-card">
   <img src="images/wasted.png" alt="Wasted" class="product-photo" />
   <h3 class="product-name">Wasted</h3>
   <p class="product-price">10 pounds</p>
@@ -177,6 +265,11 @@
   <p class="product-price">10 pounds</p>
 </article>
 
+<article class="product-card">
+  <img src="images/download.jpg" alt="I love you 3000" class="product-photo" />
+  <h3 class="product-name">I love you 3000</h3>
+  <p class="product-price">10 pounds</p>
+</article>
 <article class="product-card">
   <img src="images/بالطو.png" alt="بالطو" class="product-photo" />
   <h3 class="product-name">بالطو</h3>

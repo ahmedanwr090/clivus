@@ -94,6 +94,8 @@ const SHEETS = [
       "images/liverpool/8.png",
       "images/liverpool/9.png",
     ],
+  },
+  {
         id: "Batman-icons",
     name: "Batman Sheet",
     price: "65 pounds",
@@ -112,6 +114,42 @@ const SHEETS = [
       "images/batman/9.png",
             "images/batman/10.png",
 
+    ],
+  },
+
+   {
+        id: "Alahly-icons",
+    name: "Alahly Sheet",
+    price: "40 pounds",
+    mainImage: "images/alahly/laptop-image.png",
+    description:
+      "A Alahly-themed sticker sheet — perfect for laptops,Ipads, and notebooks. Each sticker is die-cut and ready to peel.",
+    contents: [
+      "images/alahly/1.png",
+      "images/alahly/2.png",
+      "images/alahly/3.png",
+      "images/alahly/4.png",
+      "images/alahly/5.jpg",
+      "images/alahly/6.png",
+  
+    ],
+  },
+
+     {
+        id: "Iron-man-icons",
+    name: "Iron Man Sheet",
+    price: "50 pounds",
+    mainImage: "images/ironman/laptop-image.png",
+    description:
+      "A Iron Man-themed sticker sheet — perfect for laptops,Ipads, and notebooks. Each sticker is die-cut and ready to peel.",
+    contents: [
+      "images/ironman/1.png",
+      "images/ironman/2.png",
+      "images/ironman/3.png",
+      "images/ironman/4.png",
+      "images/ironman/5.jpg",
+      "images/ironman/6.png",
+  
     ],
   },
 ];
