@@ -94,5 +94,24 @@ const SHEETS = [
       "images/liverpool/8.png",
       "images/liverpool/9.png",
     ],
+        id: "Batman-icons",
+    name: "Batman Sheet",
+    price: "65 pounds",
+    mainImage: "images/batman/laptop.png",
+    description:
+      "A Batman-themed sticker sheet — perfect for laptops,Ipads, and notebooks. Each sticker is die-cut and ready to peel.",
+    contents: [
+      "images/batman/1.png",
+      "images/batman/2.png",
+      "images/batman/3.png",
+      "images/batman/4.png",
+      "images/batman/5.png",
+      "images/batman/6.png",
+      "images/batman/7.png",
+      "images/batman/8.png",
+      "images/batman/9.png",
+            "images/batman/10.png",
+
+    ],
   },
 ];
