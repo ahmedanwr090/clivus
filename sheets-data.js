@@ -154,4 +154,27 @@ const SHEETS = [
   
     ],
   },
+
+    {
+        id: "fmtu icons",
+    name: "FMTU Man Sheet",
+    price: "65 pounds",
+    mainImage: "images/FMTU/laptop-image.png",
+    description:
+      "A Medicine-themed sticker sheet  with A FMTU touch— perfect for laptops,Ipads, and notebooks. Each sticker is die-cut and ready to peel.",
+    contents: [
+      "images/FMTU/1.png",
+      "images/FMTU/2.png",
+      "images/FMTU/3.jpg",
+      "images/FMTU/4.png",
+      "images/FMTU/5.png",
+      "images/FMTU/6.png",
+      "images/FMTU/7.png",
+      "images/FMTU/8.png",
+        "images/FMTU/9.png",
+      "images/FMTU/10.png",
+      "images/FMTU/11.png",
+
+    ],
+  },
 ];
