@@ -261,10 +261,14 @@ body {
   .hero-logo {
     width: 140px;
   }
+  /* style.css */
+@media (max-width: 480px) {
   .hero-tagline {
-    font-size: 1.4rem;
-    max-width: 160px;
+    font-size: 1.1rem; /* shrink a bit so it fits one line on narrow phones */
+    max-width: none;
+    white-space: nowrap;
   }
+}
   .section-heading {
     font-size: 1.75rem;
   }
