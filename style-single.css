@@ -45,17 +45,26 @@ body {
   flex-shrink: 0;
   filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.25));
 }
-
 .hero-tagline {
-  font-family: var(--font-display);
-  font-size: 2rem;
-  font-style: italic;
+  margin-left: -15px; /* increase this number until it looks right */
+}
+.hero-tagline {
+  font-family: "Permanent Marker", cursive;
+  font-style: normal;
   color: var(--teal-dark);
-  letter-spacing: 0.02em;
+  letter-spacing: 0.01em;
+  font-size: 1.5rem;
   line-height: 1.2;
-  max-width: 260px;
+  max-width: 300px;
+}
+/* ===== Compact hero (subpages) ===== */
+.hero--compact {
+  padding: 2.5rem 1.5rem 2rem;
 }
 
+.hero-logo--small {
+  width: 180px;
+}
 /* ===== Stickers section ===== */
 .stickers-section {
   background: var(--charcoal);
@@ -206,9 +215,7 @@ body {
   padding: 2.5rem 1.5rem 2rem;
 }
 
-.hero-logo--small {
-  width: 120px;
-}
+
 
 .hero-logo-link {
   display: inline-block;
@@ -409,3 +416,4 @@ div.product-photo {
     gap: 1rem;
   }
 }
+  
